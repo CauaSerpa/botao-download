@@ -101,9 +101,9 @@ body
     }
     .button::before
     {
-        top: -1;
-        left: -101%;
-        height: 101%;
+        top: -3px;
+        left: -102%;
+        height: 103%;
         border: 2px solid #000;
     }
 }
