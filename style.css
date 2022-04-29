@@ -1,0 +1,92 @@
+/* Font Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Poppins', sans-serif;
+}
+.button
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 95px;
+    width: 360px;
+    background: none;
+    border: 2px solid #000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    transition: all .4s cubic-bezier(.68, -.55, .265, 1.55);
+    cursor: pointer;
+    overflow: hidden;
+}
+.button.active
+{
+    height: 20px;
+    width: 500px;
+}
+.button::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+.button.active::before
+{
+    animation: layer 6s ease-in-out forwards;
+}
+@keyframes layer
+{
+    100%
+    {
+        left: 0%;
+    }
+}
+.button .content
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease;
+    transition-delay: .2s;
+}
+.button.active .content
+{
+    transform: translateY(60px);
+}
+.button.remove .content
+{
+    animation: remove .1s ease-in-out forwards;
+}
+@keyframes remove {
+    50%
+    {
+        transform: translateY(60px);
+    }
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+.content i,
+.content .button-text
+{
+    color: #000;
+    font-size: 40px;
+}
+.content .button-text
+{
+    font-size: 28px;
+    margin-left: 8px;
+}
